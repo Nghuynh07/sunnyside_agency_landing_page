@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Barlow", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.small-font {
+  font-size: 1.4rem;
+}
+
+.regular-font {
+  font-size: 1.8rem;
+}
+
+.section-heading {
+  font-size: 4rem;
+}
+
+.extra-large-font {
+  font-size: 5.6rem;
+}
+
+.info-font {
+  font-size: 1.5rem;
+}
+
+.testimonial-heading {
+  font-size: 2rem;
+}
+
+.section-action {
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=main.css.map */
