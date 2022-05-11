@@ -1,31 +1,50 @@
+@use "base.scss" as *;
+
 .small-font {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  line-height: 1.8;
+  color: $color-dark-grayish-blue;
+  margin: 2rem 0;
 }
 
 .medium-font {
 }
 .regular-font {
   font-size: 1.8rem;
+  color: $color-white;
+  font-family: "Barlow", sans-serif;
+  text-transform: capitalize;
 }
 
 .section-heading {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-family: "Fraunces", san-serif;
+  max-width: 70%;
+  text-align: left;
+  font-weight: 900;
 }
 
 .section-medium-heading {
 }
 
 .extra-large-font {
-  font-size: 5.6rem;
+  font-size: clamp(4rem, 4vw, 5.6rem);
+  @include fontStylesFraunces;
+  word-spacing: 1rem;
+  letter-spacing: 0.9rem;
+  text-transform: uppercase;
+  color: $color-white;
+  text-align: center;
 }
 
 .info-font {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  @include fontStylesFraunces;
+  color: #000;
+  text-transform: uppercase;
+  position: relative;
+  transform: width 0.2s;
 }
 .testimonial-heading {
   font-size: 2rem;
-}
-
-.section-action {
-  font-size: 1.5rem;
 }
