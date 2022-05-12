@@ -1,162 +1,209 @@
 @use "base.scss" as *;
 
-.container {
-  min-height: 100vh;
-  max-width: 100%;
-
-  .nav {
-    min-height: 10rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+.header {
+  max-height: 100vh;
+  width: 100%;
+  position: relative;
+  &-bg {
     width: 100%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-
-    &-logo {
-      margin-left: 5rem;
-    }
-
-    &-list {
-      margin-left: auto;
-      margin-right: 5rem;
-    }
-
-    &-link:not(:last-child) {
-      margin-right: 5rem;
-    }
-
-    .contact {
-      border-radius: 10rem;
-      background-color: $color-white;
-      padding: 1rem 2rem;
-      color: #000;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 1.2rem;
-      font-family: "Fraunces", serif;
-      transition: background-color 0.2s, color 0.2s;
-      &:hover {
-        background-color: rgba($color-dark-blue, 0.4);
-        color: $color-white;
-      }
-    }
+    object-fit: cover;
+    // aspect-ratio: 1/1;
   }
+}
 
-  .header {
-    background: url(../images/desktop/image-header.jpg) center no-repeat;
-    background-size: cover;
-    min-height: 80vh;
+.main {
+  .section-1 {
+    min-height: 60vh;
     max-width: 100%;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    overflow-x: hidden;
-    transition: all 0.2s;
-    &-wrapper {
-      max-width: fit-content;
-      margin-top: 15rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &-arrow-down {
-      margin-top: clamp(5rem, 5vh, 10rem);
-      object-fit: contain;
-    }
-  }
-
-  .section-1 {
-    @include sectionLayout;
-    background-color: green;
     &-with-text {
-      @include sectionWithText;
+      width: 100%;
+      display: grid;
+      place-content: center;
     }
 
     &-without-text {
+      width: 100%;
       img {
         width: 100%;
-        // object-fit: cover;
-        // object-position: center;
+        aspect-ratio: 1/1;
+        object-fit: cover;
       }
     }
 
-    .section-1-active::before {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0.4em;
-      bottom: 0;
-      left: 0;
-      border-radius: 10rem;
-      background-color: $color-yellow;
-      z-index: -1;
-      transition: width 0.2s;
-    }
-    .section-1-active:hover.section-1-active::before {
-      width: 100%;
-      transition: width 0.2s;
+    &-learnmore {
+      &::before {
+        background-color: $color-yellow;
+      }
     }
   }
 
   .section-2 {
-    @include sectionLayout;
+    min-height: 60vh;
+    max-width: 100%;
+    display: flex;
     &-with-text {
-      @include sectionWithText;
+      width: 100%;
+      display: grid;
+      place-content: center;
     }
+
     &-without-text {
+      width: 100%;
       img {
         width: 100%;
+        aspect-ratio: 1/1;
         object-fit: cover;
-        object-position: center;
       }
     }
 
-    .section-2-active::before {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0.4em;
-      bottom: 0;
-      left: 0;
-      border-radius: 10rem;
-      background-color: $color-soft-red;
-      z-index: -1;
-      transition: width 0.2s;
-    }
-    .section-2-active:hover.section-2-active::before {
-      width: 100%;
-      transition: width 0.2s;
+    &-learnmore {
+      &::before {
+        background-color: $color-soft-red;
+      }
     }
   }
 
   .section-3 {
-    @include sectionLayout;
+    min-height: 60vh;
+    max-width: 100%;
+    display: flex;
 
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: center;
+      max-height: 20rem;
+    }
     &-graphic-design {
-      img {
-      }
+      width: 100%;
+      background: url(../images/desktop/image-graphic-design.jpg) top no-repeat;
+      background-size: cover;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
     }
 
     &-photography {
+      width: 100%;
+      background: url(../images/desktop/image-photography.jpg) top no-repeat;
+      background-size: cover;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
     }
   }
 
   .section-4 {
-    margin: 15rem auto;
-    max-width: 80%;
-    background-color: green;
     display: flex;
     flex-direction: column;
     align-items: center;
-    &-heading {
-    }
-
+    padding: 10rem;
+    text-align: center;
     &-testimonials {
       display: flex;
+      gap: 5rem;
+    }
+
+    &-emily {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      img {
+        width: 7.2rem;
+        height: 7.2rem;
+        border-radius: 50%;
+      }
+    }
+
+    &-thomas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      img {
+        width: 7.2rem;
+        height: 7.2rem;
+        border-radius: 50%;
+      }
+    }
+
+    &-jennie {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      img {
+        width: 7.2rem;
+        height: 7.2rem;
+        border-radius: 50%;
+      }
+    }
+    &-infos {
+      & > *:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-height: 80vh;
+    &-gallery {
+      display: flex;
+    }
+
+    &-img-wrapper {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .header {
+      &-bg {
+        aspect-ratio: 1/1;
+      }
+    }
+    .section-1 {
+      flex-wrap: wrap-reverse;
+
+      &-with-text {
+        padding: 5rem;
+
+        & > * {
+          margin: 1.5rem auto;
+          text-align: center;
+        }
+      }
+    }
+    .section-2 {
+      flex-wrap: wrap;
+    }
+
+    .section-3 {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 1150px) {
+    .section-4 {
+      &-testimonials {
+        flex-direction: column;
+      }
     }
   }
 }
