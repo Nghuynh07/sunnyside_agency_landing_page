@@ -1,4 +1,38 @@
 @use "base.scss" as *;
+.nav {
+  &-link {
+    font-size: 1.8rem;
+    color: $color-white;
+    text-transform: capitalize;
+  }
+
+  &-contact {
+    color: $color-very-dark-desaturated-blue;
+    font-size: 1.5rem;
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    text-transform: uppercase;
+    background-color: $color-white;
+    border-radius: 5rem;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: rgba($color-very-dark-desaturated-blue, 0.2);
+    }
+  }
+}
+
+.header-heading {
+  font-size: clamp(4rem, 6vw, 5.6rem);
+  color: $color-white;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  // background-color: green;
+  width: fit-content;
+  text-align: center;
+  margin-bottom: 4rem;
+}
 
 .section-heading {
   font-family: "Fraunces", serif;
@@ -28,10 +62,15 @@
     position: absolute;
     bottom: 0.2rem;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 0.5rem;
     z-index: -1;
     border-radius: 5rem;
+    transition: width 0.3s;
+  }
+
+  &:hover.section-learnmore::before {
+    width: 100%;
   }
 }
 
@@ -43,6 +82,9 @@
 
 .section-3-text {
   color: #000;
+  line-height: 1.5;
+  max-width: 40rem;
+  margin-top: 3rem;
 }
 
 .section-4-heading {
@@ -64,4 +106,36 @@
 .section-4-title {
   font-size: clamp(1rem, 3vw, 1.4rem);
   color: $color-grayish-blue;
+}
+
+.footer-social-link {
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  text-transform: capitalize;
+  color: $color-dark-desaturated-cyan;
+  font-weight: 900;
+  transition: color 0.2s;
+  &:hover {
+    color: $color-white;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav {
+    &-link {
+      font-size: 2rem;
+      color: $color-very-dark-desaturated-blue;
+      margin: 3rem;
+    }
+
+    &-contact {
+      color: $color-very-dark-desaturated-blue;
+      font-size: 1.5rem;
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      padding: 1.5rem 3rem;
+      text-transform: uppercase;
+      background-color: $color-yellow;
+      border-radius: 5rem;
+    }
+  }
 }
